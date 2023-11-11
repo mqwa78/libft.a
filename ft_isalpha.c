@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mamahtal <mamahtal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:14:24 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/08 13:41:35 by mqwa             ###   ########.fr       */
+/*   Updated: 2023/11/11 11:27:44 by mamahtal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+static int	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z');
 }
 
-int	ft_islower(int c)
+static int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }

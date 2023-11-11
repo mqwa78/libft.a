@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mamahtal <mamahtal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:06:45 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/10 20:30:00 by mqwa             ###   ########.fr       */
+/*   Updated: 2023/11/11 15:56:12 by mamahtal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_set(char const *set, char c)
+static int	ft_check_set(char const *set, char c)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ int	ft_check_set(char const *set, char c)
 	return (0);
 }
 
-size_t	ft_count_set(char const *s1, char const *set)
+static size_t	ft_count_set(char const *s1, char const *set)
 {
 	size_t	count;
 	size_t	i;
@@ -69,9 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-
-/*int	main(void)
-{
-	printf("%s\n", ft_strtrim("   ", " /"));
-	return (0);
-}*/
