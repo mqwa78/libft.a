@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 10:47:39 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/13 10:44:41 by mqwa             ###   ########.fr       */
+/*   Created: 2023/11/13 11:54:18 by mqwa              #+#    #+#             */
+/*   Updated: 2023/11/13 13:51:07 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 {
-	size_t	i;
-	size_t	j;
-	size_t	dest_length;
-	size_t	src_length;
+	t_list	*new_lst;
+	t_list	*elem;
 
-	src_length = ft_strlen(src);
-	dest_length = ft_strlen(dst);
-	j = dest_length;
-	i = 0;
-	if (dest_length < size - 1 && size > 0)
+	if (!lst || !f)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
 	{
-		while (src[i] && dest_length + i < size - 1)
+		elem = f(lst->content);
+		if (!(elem = ft_lstnew(elem)))
 		{
-			dst[j] = src[i];
-			j++;
-			i++;
+			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
-		dst[j] = 0;
+		ft_lstadd_back(&new_lst, elem);
+		lst = lst->next;
 	}
-	if (dest_length >= size)
-		dest_length = size;
-	return (dest_length + src_length);
+	return (new_lst);
 }

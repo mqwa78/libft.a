@@ -3,6 +3,11 @@
 		"limits.h": "c",
 		"stdio.h": "c",
 		"stdlib.h": "c",
-		"string.h": "c"
-	}
+		"string.h": "c",
+		"array": "c",
+		"string_view": "c",
+		"initializer_list": "c",
+		"utility": "c"
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }
