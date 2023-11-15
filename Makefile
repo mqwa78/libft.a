@@ -34,10 +34,6 @@ $(OBJS) : $(SRCS)
 bonus : $(OBJSALL)
 	ar -rsc $(NAME) $(OBJSALL)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCSALL)
-	gcc -nostartfiles -shared -o libft.so $(OBJSALL)
-
 all: $(NAME)
 
 clean:
