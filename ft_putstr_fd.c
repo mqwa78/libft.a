@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamahtal <mamahtal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 16:53:25 by mamahtal          #+#    #+#             */
-/*   Updated: 2023/11/12 17:00:47 by mamahtal         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:55:04 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
-{
+{	
+	if (!s)
+		return ;
 	while (*s)
 		write(fd, s++, 1);
 }

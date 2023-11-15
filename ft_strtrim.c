@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamahtal <mamahtal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:06:45 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/11 15:56:12 by mamahtal         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:52:20 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	char	*str;
 
+	if (!s1 || !set)
+		return (NULL);
 	size = ft_strlen(s1) - ft_count_set(s1, set);
 	str = malloc(sizeof(char) * size + 1);
 	if (!str)

@@ -6,7 +6,7 @@
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:47:39 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/13 10:44:41 by mqwa             ###   ########.fr       */
+/*   Updated: 2023/11/13 23:35:25 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 	size_t	dest_length;
 	size_t	src_length;
-
+	
+	if (!size && (!src || !dst))
+		return (0);
 	src_length = ft_strlen(src);
 	dest_length = ft_strlen(dst);
 	j = dest_length;

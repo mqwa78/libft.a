@@ -6,7 +6,7 @@
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:15:28 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/10 16:55:40 by mqwa             ###   ########.fr       */
+/*   Updated: 2023/11/13 22:51:00 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!len && !big)
+		return (0);
 	if (!*little)
 		return ((char *)big);
 	i = 0;
