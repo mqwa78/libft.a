@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:54:18 by mqwa              #+#    #+#             */
-/*   Updated: 2023/11/14 12:17:19 by mqwa             ###   ########.fr       */
+/*   Updated: 2026/04/21 01:39:10 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*elem;
+	void	*content;
 
 	if (!lst || !f)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
 	{
-		elem = f(lst->content);
-		if (!(elem = ft_lstnew(elem)))
+		content = f(lst->content);
+		elem = ft_lstnew(content);
+		if (!elem)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);

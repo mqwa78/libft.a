@@ -6,7 +6,7 @@
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:33:28 by mamahtal          #+#    #+#             */
-/*   Updated: 2023/11/14 13:21:17 by mqwa             ###   ########.fr       */
+/*   Updated: 2026/04/20 23:25:19 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = 0;
 	return (sub);
 }
-

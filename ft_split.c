@@ -6,13 +6,13 @@
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:49:50 by mamahtal          #+#    #+#             */
-/*   Updated: 2023/11/14 19:21:42 by mqwa             ###   ########.fr       */
+/*   Updated: 2026/04/21 01:47:42 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		ft_count_words(const char *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	words;
 
@@ -53,7 +53,7 @@ static const char	*ft_dup_until_c(char **dest, const char *src, char c)
 	return (src);
 }
 
-static void			ft_tab_killer(char ***strs, size_t len)
+static void	ft_tab_killer(char ***strs, size_t len)
 {
 	size_t	i;
 
@@ -67,7 +67,7 @@ static void			ft_tab_killer(char ***strs, size_t len)
 	*strs = NULL;
 }
 
-char				**ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**strs;
 	size_t	words;
