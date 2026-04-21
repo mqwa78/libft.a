@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqwa <mqwa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:51:14 by mqwa              #+#    #+#             */
-/*   Updated: 2026/04/21 03:29:14 by mqwa             ###   ########.fr       */
+/*   Created: 2026/04/21 03:18:57 by mqwa              #+#    #+#             */
+/*   Updated: 2026/04/21 03:27:56 by mqwa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_isspace(int c)
 {
-	int	res;
-	int	m;
-
-	m = 1;
-	res = 0;
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
-			m = -m;
-		nptr++;
-	}
-	while (ft_isdigit(*nptr) && *nptr)
-	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
-	}
-	return (m * res);
+	return (c == 32 || (c >= 9 && c <= 13));
 }

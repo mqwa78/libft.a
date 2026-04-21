@@ -18,6 +18,14 @@ SRCS = ./strings/ft_strlcpy.c \
        ./print/ft_putendl_fd.c \
 	   ./print/ft_putstr_fd.c \
 	   ./print/ft_putchar_fd.c \
+	   ./printf/ft_printf.c \
+	   ./printf/ft_putchar.c \
+	   ./printf/ft_putnbr.c \
+	   ./printf/ft_putstr.c \
+	   ./printf/ft_putaddr.c \
+	   ./printf/ft_put_unsigned_n.c \
+	   ./printf/ft_putupper_hexa.c \
+	   ./printf/ft_putlower_hexa.c \
 	   ./memory/ft_calloc.c \
 	   ./memory/ft_memcpy.c \
 	   ./memory/ft_memcmp.c \
@@ -26,6 +34,7 @@ SRCS = ./strings/ft_strlcpy.c \
 	   ./memory/ft_bzero.c \
 	   ./memory/ft_memset.c \
 	   ./ctypes/ft_isalpha.c \
+	   ./ctypes/ft_isspace.c \
 	   ./ctypes/ft_isalnum.c \
 	   ./ctypes/ft_isascii.c \
 	   ./ctypes/ft_isdigit.c \
