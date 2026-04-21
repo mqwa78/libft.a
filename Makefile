@@ -1,47 +1,67 @@
-SRCS = ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putchar_fd.c ft_strlcpy.c \
-       ft_strlcat.c ft_atoi.c ft_isascii.c ft_split.c ft_strnstr.c ft_itoa.c \
-	   ft_strmapi.c ft_striteri.c ft_strjoin.c ft_substr.c ft_strdup.c \
-	   ft_calloc.c ft_strrchr.c ft_strchr.c ft_memcpy.c ft_strncmp.c \
-	   ft_memcmp.c ft_memchr.c ft_memmove.c ft_isalnum.c ft_bzero.c \
-	   ft_isalpha.c ft_memset.c ft_isdigit.c ft_isprint.c ft_strlen.c \
-	   ft_tolower.c ft_toupper.c ft_strtrim.c
-
-BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-		ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
-		ft_lstadd_back_bonus.c
-
-SRCSALL = $(SRCS) $(BONUS)
+SRCS = ./strings/ft_strlcpy.c \
+	   ./strings/ft_strlcat.c \
+	   ./strings/ft_atoi.c \
+	   ./strings/ft_split.c \
+       ./strings/ft_strnstr.c \
+	   ./strings/ft_itoa.c \
+	   ./strings/ft_strmapi.c \
+	   ./strings/ft_striteri.c \
+	   ./strings/ft_strjoin.c \
+       ./strings/ft_substr.c \
+	   ./strings/ft_strdup.c \
+	   ./strings/ft_strrchr.c \
+	   ./strings/ft_strchr.c \
+	   ./strings/ft_strncmp.c \
+	   ./strings/ft_strlen.c \
+	   ./strings/ft_strtrim.c \
+	   ./print/ft_putnbr_fd.c \
+       ./print/ft_putendl_fd.c \
+	   ./print/ft_putstr_fd.c \
+	   ./print/ft_putchar_fd.c \
+	   ./memory/ft_calloc.c \
+	   ./memory/ft_memcpy.c \
+	   ./memory/ft_memcmp.c \
+	   ./memory/ft_memchr.c \
+	   ./memory/ft_memmove.c \
+	   ./memory/ft_bzero.c \
+	   ./memory/ft_memset.c \
+	   ./ctypes/ft_isalpha.c \
+	   ./ctypes/ft_isalnum.c \
+	   ./ctypes/ft_isascii.c \
+	   ./ctypes/ft_isdigit.c \
+       ./ctypes/ft_isprint.c \
+	   ./ctypes/ft_tolower.c \
+	   ./ctypes/ft_toupper.c \
+	   ./list/ft_lstnew.c \
+       ./list/ft_lstadd_front.c \
+	   ./list/ft_lstsize.c \
+       ./list/ft_lstlast.c \
+	   ./list/ft_lstdelone.c \
+	   ./list/ft_lstclear.c \
+       ./list/ft_lstiter.c \
+	   ./list/ft_lstmap.c \
+	   ./list/ft_lstadd_back.c
 
 OBJS = $(SRCS:.c=.o)
 
-OBJSALL = $(SRCSALL:.c=.o)
-
-FLAGS = -Wall -Wextra -Werror
-
 CC = cc
-
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 NAME = libft.a
-
-.c.o:
-		$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
-
-$(NAME) : $(OBJS)
-	ar -crs $(NAME) $(OBJS)
-
-$(OBJS) : $(SRCS)
-	$(CC) -c $(FLAGS) -include libft.h $(SRCS)
-
-bonus : $(OBJSALL)
-	ar -rsc $(NAME) $(OBJSALL)
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -rf $(OBJSALL)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY : all clean fclean re bonus
+.PHONY: all clean fclean re
